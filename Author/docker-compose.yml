@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  author-db:
+    image: postgres:15-alpine
+    container_name: author-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: author_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - author_db_data:/var/lib/postgresql/data
+
+volumes:
+  author_db_data:
