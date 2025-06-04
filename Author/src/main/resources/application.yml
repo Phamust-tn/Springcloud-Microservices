@@ -4,7 +4,7 @@ spring:
   
   # Database Configuration (PostgreSQL)
   datasource:
-    url: jdbc:postgresql://localhost:5432/author_db
+    url: jdbc:postgresql://author-db:5432/author_db
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
@@ -27,12 +27,12 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
   instance:
-    hostname: localhost
-    prefer-ip-address: true
+    hostname: author-service
+    prefer-ip-address: false
 
 # Logging Configuration
 logging:
